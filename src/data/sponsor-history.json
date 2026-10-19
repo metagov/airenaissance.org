@@ -1,0 +1,113 @@
+{
+  "years": [
+    {
+      "year": 2023,
+      "sponsors": [
+        {
+          "name": "Delphia",
+          "url": "https://delphia.com/",
+          "logo": "/images/logos/delphia.webp"
+        },
+        {
+          "name": "Ceramic",
+          "url": "https://ceramic.network/",
+          "logo": "/images/logos/ceramic_logo.webp"
+        },
+        {
+          "name": "Seed Club",
+          "url": "https://www.seedclub.xyz/",
+          "logo": "/images/logos/seed_club.webp"
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "sponsors": [
+        {
+          "name": "Second Time Founders",
+          "url": "https://www.secondtimefounders.com/",
+          "logo": "/images/logos/second-time-founders.webp"
+        },
+        {
+          "name": "Omidyar Network",
+          "url": "https://omidyar.com/",
+          "logo": "/images/logos/omidyar_network.webp"
+        },
+        {
+          "name": "Metaculus",
+          "url": "https://www.metaculus.com/",
+          "logo": "/images/logos/metaculus.svg"
+        },
+        {
+          "name": "BlockScience",
+          "url": "https://block.science/",
+          "logo": "/images/logos/blockscience_logo.webp"
+        },
+        {
+          "name": "LAY3R",
+          "url": "https://layer.xyz/",
+          "logo": "/images/logos/lay3r.webp"
+        },
+        {
+          "name": "Viki Jan",
+          "logo": "/images/logos/viki_jan.webp"
+        },
+        {
+          "name": "Metagov",
+          "url": "https://metagov.org/",
+          "logo": "/images/logos/metagov.png"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "sponsors": [
+        {
+          "name": "Center for Cultural Innovation",
+          "url": "https://cciarts.org/",
+          "logo": "/images/logos/center-for-cultural-innovation.svg"
+        },
+        {
+          "name": "3Box",
+          "url": "https://3box.io/",
+          "logo": "/images/logos/3box.webp"
+        },
+        {
+          "name": "ID Theory",
+          "url": "https://idtheory.io/",
+          "logo": "/images/logos/id_theory.webp"
+        },
+        {
+          "name": "National Science Foundation",
+          "url": "https://www.nsf.gov/",
+          "logo": "/images/logos/nsf.svg"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "sponsors": [
+        {
+          "name": "Metagov",
+          "url": "https://metagov.org/",
+          "logo": "/images/logos/metagov.png"
+        },
+        {
+          "name": "Current AI",
+          "url": "https://www.currentai.org/",
+          "logo": "/images/logos/current-ai.svg"
+        },
+        {
+          "name": "Anaconda",
+          "url": "https://www.anaconda.com/",
+          "logo": "/images/logos/anaconda.webp"
+        },
+        {
+          "name": "Open WebUI",
+          "url": "https://openwebui.com/",
+          "logo": "/images/logos/open-webui.webp"
+        }
+      ]
+    }
+  ]
+}

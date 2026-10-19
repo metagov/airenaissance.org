@@ -1,0 +1,92 @@
+---
+import "../styles/global.css";
+import { applyUrl } from "../data/content";
+import sponsorHistory from "../data/sponsor-history.json";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+const groupedSponsors = path === "/sponsor";
+const sponsorGroups = groupedSponsors
+  ? [...sponsorHistory.years].sort((a, b) => b.year - a.year)
+  : sponsorHistory.years.filter((year) => year.year === 2026);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`https://airenaissance.org${path}`} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to Content</a>
+    <header class="site-header">
+      <a class="brand" href="/">AI Renaissance</a>
+      <button class="menu-toggle" type="button" aria-label="Open Menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <a href="/sponsor" aria-current={path === "/sponsor" ? "page" : undefined}>Sponsor</a>
+        <a href={applyUrl} target="_blank" rel="noreferrer">Apply</a>
+        <a class="mail" href="mailto:josh@metagov.org" aria-label="josh@metagov.org">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 5h20v14H2V5zm2 2v.4l8 5.2 8-5.2V7H4zm16 2.2-8 5.2-8-5.2V17h16V9.2z"></path>
+          </svg>
+        </a>
+      </nav>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="footer">
+      <section class="made-possible" aria-labelledby="sponsors-heading">
+        <h2 id="sponsors-heading" class="headline">Made possible by</h2>
+        {
+          sponsorGroups.map((group) => (
+            <div class="sponsor-year">
+              {groupedSponsors && <h3>{group.year}</h3>}
+              <div class="sponsor-row">
+                {group.sponsors.map((sponsor) =>
+                  sponsor.url ? (
+                    <a href={sponsor.url}>
+                      <img src={sponsor.logo} alt={sponsor.name} />
+                    </a>
+                  ) : (
+                    <span>
+                      <img src={sponsor.logo} alt={sponsor.name} />
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </section>
+      <p>
+        AI Renaissance 2026 is organized by <a href="https://publicai.co/">Public AI</a> and <a href="https://metagov.org/">Metagov</a> with support from the royal family of Schaumburg-Lippe
+      </p>
+    </footer>
+    <script>
+      const toggle = document.querySelector(".menu-toggle");
+      toggle?.addEventListener("click", () => {
+        const open = document.body.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close Menu" : "Open Menu");
+      });
+    </script>
+  </body>
+</html>

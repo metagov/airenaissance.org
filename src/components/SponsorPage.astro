@@ -1,0 +1,135 @@
+---
+import Base from "../layouts/Base.astro";
+import { organizerMail, sponsor } from "../data/content";
+
+const sponsorLinks: Record<string, string> = Object.fromEntries(sponsor.sponsors);
+---
+
+<Base
+  title="Sponsor — AI RENAISSANCE"
+  description="Sponsorship packages for AI Renaissance at Bückeburg Palace."
+  path="/sponsor"
+>
+  <section class="hero hero-sponsor" style={`background-image: url('${sponsor.hero}')`}>
+    <div class="hero-inner">
+      <h1 class="headline">Sponsorship packages</h1>
+    </div>
+  </section>
+
+  <section class="band band-yellow">
+    <div class="wrap prose">
+      {
+        sponsor.lede.map((paragraph) => {
+          const labeled = paragraph.match(/^([^:]+:)\s*([\s\S]+)$/);
+          if (!labeled) return <p>{paragraph}</p>;
+          return (
+            <p>
+              <strong>{labeled[1]}</strong> {labeled[2]}
+            </p>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section class="band band-yellow" style="padding-top: 0">
+    <div class="wrap">
+      {
+        sponsor.packages.map((pack, index) => (
+          <article class:list={["package", index % 2 === 1 && "flip"]}>
+            <div>
+              <h2 class="headline">{pack.name}</h2>
+              <p class="price">
+                <strong>Price:</strong> {pack.price}
+              </p>
+              <p>{pack.summary}</p>
+              <div>
+                {pack.benefits.map((benefit) => (
+                  <details class="benefit">
+                    <summary>{benefit.title}</summary>
+                    <p>{benefit.body}</p>
+                  </details>
+                ))}
+              </div>
+              <a class="btn btn-dark" href={pack.cta.href}>
+                {pack.cta.label}
+              </a>
+            </div>
+            <img src={pack.image} alt="" />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="band band-yellow" id="contact" style="padding-top: 1rem">
+    <div class="wrap prose">
+      <h2 class="headline">Contact us</h2>
+      <p>
+        Please contact <a href={organizerMail}>the organizers</a> if you are interested in supporting the event at any level, or if you have any questions.
+      </p>
+    </div>
+  </section>
+
+  <section class="band band-yellow faq" style="padding-top: 1rem">
+    <div class="wrap">
+      <h2 class="display" style="text-align: left; font-size: clamp(2.4rem, 5vw, 4rem);">FAQs</h2>
+      <div class="faq-grid">
+      {
+        [[0, 1], [2], [3, 4]].map((indexes) => (
+          <div>
+            {indexes.map((index) => {
+              const faq = sponsor.faqs[index];
+              return (
+          <div>
+            <h3>{faq.q}</h3>
+            {faq.q === "Who has sponsored before?" ? (
+              <p>
+                Sponsors from previous years have included the{" "}
+                <a href={sponsorLinks["National Science Foundation"]}>National Science Foundation</a>,{" "}
+                <a href={sponsorLinks["Current AI"]}>Current AI</a>,{" "}
+                <a href={sponsorLinks["HuggingFace"]}>HuggingFace</a>,{" "}
+                <a href={sponsorLinks["Metagov"]}>Metagov</a>, Metaculus, the{" "}
+                <a href={sponsorLinks["Center for Cultural Innovation"]}>Center for Cultural Innovation</a>, Viki Jan,{" "}
+                <a href={sponsorLinks["BlockScience"]}>BlockScience</a>,{" "}
+                <a href={sponsorLinks["Delphia"]}>Delphia</a>,{" "}
+                <a href={sponsorLinks["ID Theory"]}>ID Theory</a>,{" "}
+                <a href={sponsorLinks["Ceramic"]}>Ceramic</a>/3Box, and{" "}
+                <a href={sponsorLinks["Seed Club"]}>Seed Club</a>.
+              </p>
+            ) : faq.q === "Who organizes AI Renaissance?" ? (
+              <p>
+                AI Renaissance is organized by <a href="https://metagov.org/">Metagov</a>, a 501c3 nonprofit in the USA, and supported by Chatham House and the royal family of Schaumburg-Lippe.
+              </p>
+            ) : faq.q === "Is my sponsorship tax-deductible?" ? (
+              <p>
+                All sponsorships are tax deductible as charitable donations to <a href="https://metagov.org/">Metagov</a>, a 501c3 nonprofit in the US.
+              </p>
+            ) : (
+              <p>{faq.a}</p>
+            )}
+          </div>
+              );
+            })}
+          </div>
+        ))
+      }
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-grid on-yellow" aria-label="Moments from previous gatherings">
+    {sponsor.gallery.slice(0, 3).map((src) => <img src={src} alt="" />)}
+  </section>
+
+  <section class="band band-yellow" style="padding-top: 1rem">
+    <div class="wrap quotes">
+      <p class="eyebrow">What past attendees had to say</p>
+      {sponsor.quotes.map((quote) => <h2 class="quote">“{quote}”</h2>)}
+    </div>
+  </section>
+
+  <section class="photo-grid on-yellow" aria-label="More moments from the palace">
+    {sponsor.gallery.slice(3).map((src) => <img src={src} alt="" />)}
+  </section>
+</Base>

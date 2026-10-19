@@ -1,0 +1,132 @@
+---
+import Base from "../layouts/Base.astro";
+import { applicationsUrl, home, questionsUrl } from "../data/content";
+---
+
+<Base
+  title="AI RENAISSANCE"
+  description="A 10-day unconference on the political economy of AI at Bückeburg Palace, Germany."
+  path="/"
+>
+  <section class="hero" style={`background-image: url('${home.hero}')`}>
+    <div class="hero-inner">
+      <h1 class="headline">{home.welcome}</h1>
+    </div>
+  </section>
+
+  <section class="band band-yellow">
+    <div class="split split-intro">
+      <h2 class="headline">{home.introTitle}</h2>
+      <div class="prose">
+        <p>{home.intro}</p>
+        <ul class="facts">
+          {
+            home.facts.map(([label, value]) => (
+              <li>
+                <strong>{label}:</strong> {value}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-grid" aria-label="Scenes from the palace">
+    {home.grid.map((src) => <img src={src} alt="" />)}
+  </section>
+
+  <section class="band band-yellow">
+    <div class="split split-questions">
+      <div class="stack">
+        {home.questions.map((question) => <h2 class="headline">{question}</h2>)}
+      </div>
+      <div class="prose">
+        <p>{home.questionsBody}</p>
+        <p>
+          You can find <a href={questionsUrl}>more questions contributed by last year’s participants here</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" style={`background-image: url('${home.joinImage}')`}>
+    <div class="join-inner">
+      <p class="kicker">Join Us</p>
+      <h2 class="display">{home.joinDate}</h2>
+      <a class="btn" href={applicationsUrl}>Applications Open</a>
+      <p>{home.joinNote}</p>
+    </div>
+  </section>
+
+  <section class="band band-white">
+    <div class="wrap-wide">
+      <h2 class="display team-title">The Team</h2>
+      <div class="team-grid">
+        {
+          home.team.map((person) => (
+            <article class="team-card">
+              <img src={person.image} alt="" />
+              <h3>
+                {person.url ? (
+                  <a href={person.url}>{person.name}</a>
+                ) : (
+                  person.name
+                )}
+              </h3>
+              <p class="role">{person.role}</p>
+              <p class="bio">{person.bio}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-yellow">
+    <div class="location">
+      <div class="location-copy">
+        <h2 class="display">The Location</h2>
+        <div class="prose">
+          {home.location.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+      <img src={home.locationImage} alt="Bückeburg Palace" />
+    </div>
+  </section>
+
+  <section class="band band-black memories-title">
+    <h2 class="display">The Memories</h2>
+  </section>
+  <div class="reel-wrap">
+    <button class="reel-btn prev" type="button" aria-label="Previous Slide">‹</button>
+    <div class="reel">
+      {
+        home.memories.map((memory) => (
+          <figure>
+            <img src={memory.src} alt={memory.caption} />
+            <figcaption>{memory.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <button class="reel-btn next" type="button" aria-label="Next Slide">›</button>
+  </div>
+  <script>
+    const reel = document.querySelector(".reel");
+    const slides = () => [...(reel?.querySelectorAll("figure") ?? [])];
+    function step(direction: number) {
+      if (!reel) return;
+      const edge = reel.getBoundingClientRect().left;
+      const positions = slides().map((slide) => slide.getBoundingClientRect().left);
+      const target =
+        direction > 0
+          ? positions.find((left) => left > edge + 12)
+          : [...positions].reverse().find((left) => left < edge - 12);
+      if (target == null) return;
+      reel.scrollBy({ left: target - edge, behavior: "auto" });
+    }
+    document.querySelector(".reel-btn.next")?.addEventListener("click", () => step(1));
+    document.querySelector(".reel-btn.prev")?.addEventListener("click", () => step(-1));
+  </script>
+</Base>

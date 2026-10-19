@@ -1,0 +1,161 @@
+{
+  "hero": "/images/hero.jpg",
+  "join": "/images/join.jpg",
+  "location": "/images/location.jpg",
+  "joshua": "/images/people/joshua.jpg",
+  "teddy": "/images/people/teddy.jpg",
+  "primavera": "/images/people/primavera.jpg",
+  "nick": "/images/people/nick.jpg",
+  "alex": "/images/people/alex.jpg",
+  "jacob": "/images/people/jacob.jpg",
+  "tony": "/images/people/tony.png",
+  "grid-1": "/images/grid-1.jpg",
+  "grid-2": "/images/grid-2.jpg",
+  "grid-3": "/images/grid-3.jpg",
+  "grid-4": "/images/grid-4.jpg",
+  "grid-5": "/images/grid-5.jpg",
+  "grid-6": "/images/grid-6.jpg",
+  "patron": "/images/patron.jpg",
+  "villa": "/images/grid-2.jpg",
+  "palace": "/images/palace.jpg",
+  "founder": "/images/founder.jpg",
+  "sponsor-1": "/images/sponsor-1.jpg",
+  "sponsor-2": "/images/location.jpg",
+  "sponsor-3": "/images/sponsor-3.jpg",
+  "sponsor-4": "/images/sponsor-4.jpg",
+  "sponsor-5": "/images/sponsor-5.jpg",
+  "sponsor-6": "/images/sponsor-6.jpg",
+  "sponsor-7": "/images/sponsor-7.jpg",
+  "sponsor-8": "/images/sponsor-8.jpg",
+  "sponsor-9": "/images/sponsor-9.jpg",
+  "memories": [
+    {
+      "src": "/images/sponsor-1.jpg",
+      "caption": "Speakeasy in the castle treehouse"
+    },
+    {
+      "src": "/images/sponsor-9.jpg",
+      "caption": "The long table for dinner"
+    },
+    {
+      "src": "/images/memory-03.jpg",
+      "caption": "Imagining possible futures for AI in the chapel"
+    },
+    {
+      "src": "/images/memory-04.jpg",
+      "caption": "Afternoon yoga in the garden"
+    },
+    {
+      "src": "/images/sponsor-3.jpg",
+      "caption": "Supreme castle hacking"
+    },
+    {
+      "src": "/images/memory-06.jpg",
+      "caption": "Our most excellent private chef (seriously, the food was incredible)"
+    },
+    {
+      "src": "/images/memory-07.jpg",
+      "caption": "Homemade Lebanese za'atar bread (and fine German beers)"
+    },
+    {
+      "src": "/images/memory-08.jpg",
+      "caption": "Castle defenders fend off the AI invader with the aid of their trusty dog"
+    },
+    {
+      "src": "/images/sponsor-4.jpg",
+      "caption": "Lightning talks on the green"
+    },
+    {
+      "src": "/images/memory-10.jpg",
+      "caption": "Dance party in cozy room!"
+    },
+    {
+      "src": "/images/memory-11.jpg",
+      "caption": "Frisbee"
+    },
+    {
+      "src": "/images/memory-12.jpg",
+      "caption": "Presentations"
+    },
+    {
+      "src": "/images/memory-13.jpg",
+      "caption": "The blue people invite you to a ball"
+    },
+    {
+      "src": "/images/memory-14.png",
+      "caption": "The ball!"
+    },
+    {
+      "src": "/images/memory-15.jpg",
+      "caption": "The heart in the trees"
+    },
+    {
+      "src": "/images/sponsor-6.jpg",
+      "caption": "Collective intelligence in the formal room"
+    },
+    {
+      "src": "/images/sponsor-5.jpg",
+      "caption": "Meditating before the ball"
+    },
+    {
+      "src": "/images/founder.jpg",
+      "caption": "The Basilisk Observatory Bureau"
+    },
+    {
+      "src": "/images/memory-19.jpg",
+      "caption": "homemade dinner"
+    },
+    {
+      "src": "/images/memory-20.jpg",
+      "caption": "catapult hacking"
+    },
+    {
+      "src": "/images/memory-21.jpg",
+      "caption": "presenting"
+    },
+    {
+      "src": "/images/memory-22.jpg",
+      "caption": "what the actual fuck is sovereignty"
+    },
+    {
+      "src": "/images/memory-23.jpg",
+      "caption": "serious thinking"
+    },
+    {
+      "src": "/images/grid-5.jpg",
+      "caption": "a cute moment"
+    },
+    {
+      "src": "/images/memory-25.jpg",
+      "caption": "hacking"
+    },
+    {
+      "src": "/images/patron.jpg",
+      "caption": "roundtable"
+    },
+    {
+      "src": "/images/memory-27.jpg",
+      "caption": "check out the screen"
+    },
+    {
+      "src": "/images/memory-28.jpg",
+      "caption": "leopard speed"
+    },
+    {
+      "src": "/images/memory-29.jpg",
+      "caption": "2025 crew"
+    },
+    {
+      "src": "/images/memory-30.jpg",
+      "caption": "casual lunch"
+    },
+    {
+      "src": "/images/grid-3.jpg",
+      "caption": "roundtable"
+    },
+    {
+      "src": "/images/memory-32.jpg",
+      "caption": "speaking"
+    }
+  ]
+}
