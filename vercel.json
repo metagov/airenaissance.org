@@ -1,4 +1,16 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/2026",
+      "destination": "https://renaissance2026.org",
+      "permanent": true
+    },
+    {
+      "source": "/2026/",
+      "destination": "https://renaissance2026.org",
+      "permanent": true
+    }
+  ]
 }
