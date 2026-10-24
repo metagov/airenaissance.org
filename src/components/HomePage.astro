@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { applicationsUrl, home, questionsUrl } from "../data/content";
+import { applicationsUrl, home, questionsUrl, sponsor } from "../data/content";
 ---
 
 <Base
@@ -129,4 +129,11 @@ import { applicationsUrl, home, questionsUrl } from "../data/content";
     document.querySelector(".reel-btn.next")?.addEventListener("click", () => step(1));
     document.querySelector(".reel-btn.prev")?.addEventListener("click", () => step(-1));
   </script>
+
+  <section class="band band-yellow" aria-labelledby="attendee-quotes">
+    <div class="wrap quotes">
+      <p class="eyebrow" id="attendee-quotes">What past attendees had to say</p>
+      {sponsor.quotes.map((quote) => <h2 class="quote">“{quote}”</h2>)}
+    </div>
+  </section>
 </Base>
